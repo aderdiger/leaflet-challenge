@@ -74,7 +74,7 @@ let basemap = L.tileLayer(
       // We create a popup for each marker to display the magnitude and location of the earthquake after the marker has been created and styled
       onEachFeature: function (feature, layer) {
         layer.bindPopup(
-            `<strong>Magnitude:</strong> ${feature.properties.mag}<br><strong>Location:</strong> ${feature.properties.place}`
+            `<strong>Magnitude:</strong> ${feature.properties.mag}<br><strong>Location:</strong> ${feature.properties.place}<br><strong>Depth:</strong> ${feature.geometry.coordinates[2]}`
             );
       }
     }).addTo(map);
